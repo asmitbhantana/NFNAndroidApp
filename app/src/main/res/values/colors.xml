@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">#F508AA</color>
+    <color name="colorPrimaryDark">#FE0CA4</color>
+    <color name="colorAccent">#5862AF</color>
+
+
+    <color name="placeholderColor">#707070</color>
+    <color name="textColorDark">#000000</color>
+    <color name="textColorWhite">#FFFFFF</color>
+    <color name="container_card_background">#F2E2ED</color>
+    <color name="fb_color">#404FBD</color>
 </resources>

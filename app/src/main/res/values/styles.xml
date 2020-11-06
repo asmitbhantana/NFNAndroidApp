@@ -1,10 +1,67 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <!--        <item name="android:windowTranslucentStatus">true</item>-->
     </style>
 
+    <style name="actionbar" parent="Widget.AppCompat.Toolbar">
+        <item name="titleTextStyle">@style/toolbar_heading_styles</item>
+        <item name="android:titleTextStyle">@style/toolbar_heading_styles</item>
+    </style>
+
+    <style name="ProgressBarTheme" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:indeterminateTint">@color/colorPrimary</item>
+    </style>
+
+    <style name="dark_text" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/textColorDark</item>
+    </style>
+
+    <style name="light_text" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/textColorWhite</item>
+    </style>
+
+    <style name="link_text" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="dark_input_label" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/textColorDark</item>
+        <item name="android:textSize">@dimen/signin_card_input_label</item>
+    </style>
+
+    <style name="user_input_field">
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/input_field_background</item>
+        <item name="android:layout_margin">8dp</item>
+
+    </style>
+
+    <style name="sign_in_social_card" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">20dp</item>
+        <item name="cardElevation">4dp</item>
+    </style>
+    <style name="container_card" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">20dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="cardBackgroundColor">@color/container_card_background</item>
+    </style>
+
+    <style name="circular_pp_image_card" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">100dp</item>
+        <item name="cardElevation">10dp</item>
+    </style>
+
+    <style name="toolbar_heading_styles">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>
