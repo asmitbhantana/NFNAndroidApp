@@ -2,6 +2,7 @@ package org.ak.nfn.ui.auth
 
 import android.view.View
 import androidx.lifecycle.ViewModel
+import org.ak.nfn.data.repository.UserRepository
 
 class AuthViewModel:ViewModel() {
 
@@ -18,8 +19,11 @@ class AuthViewModel:ViewModel() {
             return
         }else{
             //success
-            authListener?.onSuccess()
+            val loginResponse = UserRepository().userLogin(email!!,password!!)
+            authListener?.onSuccess(loginResponse)
             return
         }
+        
+
     }
 }
