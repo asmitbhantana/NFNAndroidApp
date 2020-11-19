@@ -3,6 +3,7 @@ package org.ak.nfn.ui.auth
 import android.view.View
 import androidx.lifecycle.ViewModel
 import org.ak.nfn.data.repository.UserRepository
+import org.ak.nfn.utils.Coroutines
 
 class AuthViewModel:ViewModel() {
 
@@ -19,9 +20,14 @@ class AuthViewModel:ViewModel() {
             return
         }else{
             //success
-            val loginResponse = UserRepository().userLogin(email!!,password!!)
-            authListener?.onSuccess(loginResponse)
-            return
+            Coroutines.main {
+                val response = UserRepository().userLogin(email!!,password!!)
+                if (response.isSuccessful){
+                    authListener?.onSuccess(response.body()?.token!!)
+                }else{
+                    authListener?.onFailure("Error code: ${response.code()}")
+                }
+            }
         }
         
 

@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import kotlinx.android.synthetic.main.activity_login.*
 import org.ak.nfn.R
+import org.ak.nfn.data.db.entities.UserToken
 import org.ak.nfn.databinding.ActivityLoginBinding
 import org.ak.nfn.utils.hide
 import org.ak.nfn.utils.show
@@ -35,10 +36,8 @@ class LoginActivity : AppCompatActivity(),AuthListener {
         loading_progressbar_id.hide()
     }
 
-    override fun onSuccess(loginResponse: LiveData<String>) {
+    override fun onSuccess(userToken: UserToken) {
         loading_progressbar_id.hide()
-        loginResponse.observe(this, Observer {
-            toast(it.toString())
-        })
+        toast(userToken.token.toString())
     }
 }

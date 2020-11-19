@@ -6,15 +6,15 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import org.ak.nfn.data.db.entities.CURRENT_USER_ID
-import org.ak.nfn.data.db.entities.User
+import org.ak.nfn.data.db.entities.UserToken
 
 @Dao
-interface UserDao {
+interface UserTokenDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun upsert(user: User) : Long
+    fun upsert(userToken: UserToken) : Long
 
     @Query("Select * from user where uid = $CURRENT_USER_ID")
-    fun getUser(): LiveData<User>
+    fun getUser(): LiveData<UserToken>
 
 }
