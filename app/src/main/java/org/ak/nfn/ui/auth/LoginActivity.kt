@@ -10,6 +10,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 import org.ak.nfn.R
 import org.ak.nfn.data.db.AppDatabase
 import org.ak.nfn.data.network.MyApi
+import org.ak.nfn.data.network.NetworkConnectionInterceptor
 import org.ak.nfn.data.repository.UserRepository
 import org.ak.nfn.databinding.ActivityLoginBinding
 import org.ak.nfn.ui.home.HomeActivity
@@ -21,7 +22,8 @@ class LoginActivity : AppCompatActivity(),AuthListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val api = MyApi()
+        val networkConnectionInterceptor = NetworkConnectionInterceptor(this)
+        val api = MyApi(networkConnectionInterceptor)
         val database = AppDatabase(this)
         val repository = UserRepository(api, database)
         val factory = AuthViewModelFactory(repository)

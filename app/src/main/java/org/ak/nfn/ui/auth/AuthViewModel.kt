@@ -7,6 +7,8 @@ import org.ak.nfn.data.db.entities.UserToken
 import org.ak.nfn.data.repository.UserRepository
 import org.ak.nfn.utils.ApiException
 import org.ak.nfn.utils.Coroutines
+import org.ak.nfn.utils.NoInternetException
+
 val TAG = "Auth"
 class AuthViewModel(
     private val userRepository: UserRepository
@@ -41,6 +43,9 @@ class AuthViewModel(
                     Log.d(TAG, "onLoginButtonClicked: "+ authResponse)
                 }
                 catch (e:ApiException){
+                    authListener?.onFailure(e.message!!)
+                }
+                catch (e:NoInternetException){
                     authListener?.onFailure(e.message!!)
                 }
 

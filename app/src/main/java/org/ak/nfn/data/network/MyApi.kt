@@ -1,5 +1,6 @@
 package org.ak.nfn.data.network
 
+import okhttp3.OkHttpClient
 import org.ak.nfn.data.network.responses.AuthResponse
 import retrofit2.Response
 import retrofit2.Retrofit
@@ -19,10 +20,19 @@ interface MyApi {
     ): Response<AuthResponse>
 
     companion object {
-        operator fun invoke(): MyApi{
+        operator fun invoke(
+            networkConnectionInterceptor: NetworkConnectionInterceptor
+        ): MyApi{
+
+            val okHttpClient  = OkHttpClient.Builder()
+                .addInterceptor(networkConnectionInterceptor)
+                .build()
+
             return Retrofit.Builder()
+                .client(okHttpClient)
                 .baseUrl("https://nfnapi.herokuapp.com/api/user/")
                 .addConverterFactory(GsonConverterFactory.create())
+//                .client(okHttpClient)
                 .build()
                 .create(MyApi::class.java)
         }
