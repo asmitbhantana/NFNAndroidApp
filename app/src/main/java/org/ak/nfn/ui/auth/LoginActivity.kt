@@ -17,16 +17,16 @@ import org.ak.nfn.ui.home.HomeActivity
 import org.ak.nfn.utils.hide
 import org.ak.nfn.utils.show
 import org.ak.nfn.utils.snackbar
+import org.kodein.di.Kodein
+import org.kodein.di.KodeinAware
+import org.kodein.di.generic.instance
 
-class LoginActivity : AppCompatActivity(),AuthListener {
+class LoginActivity(override val kodein: Kodein) : AppCompatActivity(),AuthListener, KodeinAware {
+    private val factory:AuthViewModelFactory by instance()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val networkConnectionInterceptor = NetworkConnectionInterceptor(this)
-        val api = MyApi(networkConnectionInterceptor)
-        val database = AppDatabase(this)
-        val repository = UserRepository(api, database)
-        val factory = AuthViewModelFactory(repository)
 
         val binding : ActivityLoginBinding = DataBindingUtil.setContentView(this,R.layout.activity_login)
         val viewModel = ViewModelProvider(this, factory).get(AuthViewModel::class.java)
