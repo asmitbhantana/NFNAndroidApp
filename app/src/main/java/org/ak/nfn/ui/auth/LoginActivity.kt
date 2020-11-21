@@ -36,8 +36,8 @@ class LoginActivity : AppCompatActivity(),AuthListener {
         loading_progressbar_id.hide()
     }
 
-    override fun onSuccess(userToken: UserToken) {
+    override fun onSuccess(userToken: String) {
         loading_progressbar_id.hide()
-        toast(userToken.token.toString())
+        toast(userToken)
     }
 }

@@ -5,5 +5,5 @@ import org.ak.nfn.data.db.entities.UserToken
 interface AuthListener {
     fun onStarted()
     fun onFailure(message: String)
-    fun onSuccess(userToken: UserToken)
+    fun onSuccess(userToken: String)
 }

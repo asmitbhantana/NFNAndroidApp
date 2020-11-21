@@ -8,7 +8,8 @@ import org.ak.nfn.data.db.entities.UserToken
 
 @Database(
     entities = [UserToken::class],
-    version = 1
+    version = 2,
+    exportSchema = false
 )
 abstract class AppDatabase: RoomDatabase() {
     abstract fun getUserDao(): UserTokenDao

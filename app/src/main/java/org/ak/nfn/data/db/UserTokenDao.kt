@@ -14,7 +14,7 @@ interface UserTokenDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun upsert(userToken: UserToken) : Long
 
-    @Query("Select * from user where uid = $CURRENT_USER_ID")
+    @Query("Select * from usertoken where uid = $CURRENT_USER_ID")
     fun getUser(): LiveData<UserToken>
 
 }
