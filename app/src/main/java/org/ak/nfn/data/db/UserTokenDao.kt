@@ -12,7 +12,7 @@ import org.ak.nfn.data.db.entities.UserToken
 interface UserTokenDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun upsert(userToken: UserToken) : Long
+    suspend fun upsert(userToken: UserToken) : Long
 
     @Query("Select * from usertoken where uid = $CURRENT_USER_ID")
     fun getUser(): LiveData<UserToken>
