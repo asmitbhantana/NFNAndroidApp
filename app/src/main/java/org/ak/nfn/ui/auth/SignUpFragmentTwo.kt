@@ -5,7 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 import org.ak.nfn.R
+import org.ak.nfn.databinding.FragmentSignUpOneBinding
+import org.ak.nfn.databinding.FragmentSignUpTwoBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,7 +39,14 @@ class SignUpFragmentTwo : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sign_up_two, container, false)
+        val binding = DataBindingUtil.inflate<FragmentSignUpTwoBinding>(inflater,R.layout.fragment_sign_up_two, container,false)
+        binding.signupTwo = this
+
+//        binding.createAccountButton.setOnClickListener{view:View->
+//            Navigation.findNavController(view).navigate(R.id.action_signUpFragmentTwo_to_signUpFragmentOne)
+//        }
+
+        return binding.root
     }
 
     companion object {

@@ -2,6 +2,7 @@ package org.ak.nfn.ui.auth
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -57,5 +58,11 @@ class LoginActivity : AppCompatActivity(),AuthListener, KodeinAware {
     override fun onSuccess(userToken: String) {
         loading_progressbar_id.hide()
 //        root_layout_id.snackbar("Login Success!")
+    }
+
+    fun takeToSignUp(view: View) {
+        Intent(this, SignUpActivity::class.java).also{
+            startActivity(it)
+        }
     }
 }

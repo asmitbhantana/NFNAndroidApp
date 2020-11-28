@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/signup_navigation_graph"
+    app:startDestination="@id/signUpFragmentOne">
+
+    <fragment
+        android:id="@+id/signUpFragmentTwo"
+        android:name="org.ak.nfn.ui.auth.SignUpFragmentTwo"
+        android:label="SignUpFragmentTwo"
+        tools:layout="@layout/fragment_sign_up_two" />
+    <fragment
+        android:id="@+id/signUpFragmentOne"
+        android:name="org.ak.nfn.ui.auth.SignUpFragmentOne"
+        android:label="SignUpFragmentOne"
+        tools:layout="@layout/fragment_sign_up_one">
+        <!--        <action-->
+        <!--            android:id="@+id/action_signUpFragmentOne_to_signUpFragmentTwo"-->
+        <!--            app:destination="@id/signUpFragmentTwo" />-->
+        <action
+            android:id="@+id/action_signUpFragmentOne_to_signUpFragmentTwo"
+            app:destination="@id/signUpFragmentTwo" />
+    </fragment>
+</navigation>

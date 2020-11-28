@@ -1,11 +1,18 @@
 package org.ak.nfn.ui.auth
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
+import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import org.ak.nfn.R
+import org.ak.nfn.databinding.FragmentSignUpOneBinding
+import kotlin.math.log
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +28,7 @@ class SignUpFragmentOne : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    public var TAG: String? = "SignUpFragmentOne"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +43,17 @@ class SignUpFragmentOne : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sign_up_one, container, false)
+        val binding = DataBindingUtil.inflate<FragmentSignUpOneBinding>(inflater,R.layout.fragment_sign_up_one, container,false)
+        binding.signupOne = this
+
+        binding.registerBtn.setOnClickListener{view:View->
+            Log.d(TAG, "onCreateView: ${view} \n fragment one called")
+            Navigation.findNavController(view).navigate(R.id.action_signUpFragmentOne_to_signUpFragmentTwo)
+        }
+
+        //view models
+
+        return binding.root
     }
 
     companion object {
