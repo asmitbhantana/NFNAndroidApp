@@ -6,13 +6,14 @@
     >
     <data>
         <variable
-            name="signupOne"
-            type="org.ak.nfn.ui.auth.SignUpFragmentOne" />
+            name="viewmodel"
+            type="org.ak.nfn.ui.auth.AuthViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.auth.SignUpFragmentTwo">
+        tools:context=".ui.auth.SignUpFragmentTwo"
+        android:id="@+id/container_layout">
 
         <androidx.cardview.widget.CardView
             style="@style/container_card"
@@ -56,7 +57,7 @@
                         android:textAppearance="@style/dark_input_label"
                         android:textSize="15sp"
                         app:layout_constraintStart_toStartOf="@+id/textView8"
-                        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+                        app:layout_constraintTop_toBottomOf="@+id/signupEmail" />
 
                     <TextView
                         android:id="@+id/textView12"
@@ -67,7 +68,7 @@
                         android:textAppearance="@style/dark_input_label"
                         app:layout_constraintEnd_toEndOf="@+id/textView11"
                         app:layout_constraintStart_toStartOf="@+id/textView11"
-                        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
+                        app:layout_constraintTop_toBottomOf="@+id/signupPhone" />
 
                     <TextView
                         android:id="@+id/textView13"
@@ -77,10 +78,11 @@
                         android:text="Confirm Password:"
                         android:textAppearance="@style/dark_input_label"
                         app:layout_constraintStart_toStartOf="@+id/textView12"
-                        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress4" />
+                        app:layout_constraintTop_toBottomOf="@+id/signupPassword" />
 
                     <EditText
-                        android:id="@+id/editTextTextEmailAddress"
+                        android:text="@={viewmodel.signupEmail}"
+                        android:id="@+id/signupEmail"
                         style="@style/user_input_field"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -93,7 +95,8 @@
                         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
                     <EditText
-                        android:id="@+id/editTextTextEmailAddress2"
+                        android:id="@+id/signupPhone"
+                        android:text="@={viewmodel.signupPhone}"
                         style="@style/user_input_field"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -106,7 +109,8 @@
                         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
                     <EditText
-                        android:id="@+id/editTextTextEmailAddress3"
+                        android:id="@+id/signupConfirmPassword"
+                        android:text="@={viewmodel.signupConfirmPassword}"
                         style="@style/user_input_field"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -119,7 +123,8 @@
                         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
                     <EditText
-                        android:id="@+id/editTextTextEmailAddress4"
+                        android:id="@+id/signupPassword"
+                        android:text="@={viewmodel.signupPassword}"
                         style="@style/user_input_field"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -132,7 +137,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
                     <CheckBox
-                        android:id="@+id/checkBox"
+                        android:id="@+id/signupAgreeBtn"
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
@@ -143,11 +148,12 @@
                         android:textAlignment="center"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress3" />
+                        app:layout_constraintTop_toBottomOf="@+id/signupConfirmPassword" />
 
 
                     <Button
                         android:id="@+id/registerBtn"
+                        android:onClick="@{()->viewmodel.onRegisterButtonClicked()}"
                         android:layout_width="150dp"
                         android:layout_height="40dp"
                         android:layout_marginTop="32dp"
@@ -157,7 +163,7 @@
                         android:textSize="20dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+                        app:layout_constraintTop_toBottomOf="@+id/signupAgreeBtn" />
 
                     <TextView
                         android:id="@+id/textView14"
@@ -187,9 +193,9 @@
                         android:layout_height="0dp"
                         android:clickable="true"
                         android:tint="@color/textColorDark"
-                        app:layout_constraintBottom_toBottomOf="@+id/editTextTextEmailAddress4"
-                        app:layout_constraintEnd_toEndOf="@+id/editTextTextEmailAddress4"
-                        app:layout_constraintTop_toTopOf="@+id/editTextTextEmailAddress4"
+                        app:layout_constraintBottom_toBottomOf="@+id/signupPassword"
+                        app:layout_constraintEnd_toEndOf="@+id/signupPassword"
+                        app:layout_constraintTop_toTopOf="@+id/signupPassword"
                         app:srcCompat="@android:drawable/ic_menu_view" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,15 +20,16 @@ interface MyApi {
         @Field("email")email: String,
         @Field("password")password: String
     ): Response<AuthResponse>
-
+    //email, first_name, last_name, dob, gender,password, citizenship_number, current_address, permanent_address, username
     @FormUrlEncoded
     @POST("signup/")
     suspend fun userSignUp(
         @Field("email")email: String,
         @Field("first_name") first_name: String,
         @Field("last_name") last_name: String,
+        @Field("dob") dob: String,
+        @Field("gender")gender: String,
         @Field("password")password: String,
-        @Field("gender")gender: Int,
         @Field("citizenship_number")citizenship_number: String,
         @Field("current_address")current_address: String,
         @Field("permanent_address")permanent_address: String,

@@ -83,7 +83,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
             <Button
-                android:onClick="@{viewmodel::onLoginButtonClicked}"
+                android:onClick="@{()->viewmodel.onLoginButtonClicked()}"
                 android:id="@+id/register_btn_id"
                 android:layout_width="100dp"
                 android:layout_height="40dp"

@@ -2,6 +2,7 @@ package org.ak.nfn.ui.auth
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -25,6 +26,8 @@ class LoginActivity : AppCompatActivity(),AuthListener, KodeinAware {
 
     private val factory:AuthViewModelFactory by instance()
 
+    private val TAG: String = "LoginActivity"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -43,6 +46,13 @@ class LoginActivity : AppCompatActivity(),AuthListener, KodeinAware {
                 }
             }
         })
+
+        //is from signup successful
+        val isFormSignup = intent.extras?.getInt("Signup")
+        Log.d(TAG, "onCreate: $isFormSignup")
+        if (isFormSignup == 1){
+            root_layout_id.snackbar("Account Created SuccessFully. Now Login!")
+        }
 
     }
 

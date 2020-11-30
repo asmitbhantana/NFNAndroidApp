@@ -4,15 +4,17 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import org.ak.nfn.data.db.entities.User
 import org.ak.nfn.data.db.entities.UserToken
 
 @Database(
-    entities = [UserToken::class],
+    entities = [UserToken::class, User::class],
     version = 2,
     exportSchema = false
 )
 abstract class AppDatabase: RoomDatabase() {
-    abstract fun getUserDao(): UserTokenDao
+    abstract fun userTokenDao(): UserTokenDao
+    abstract fun userDao(): UserDao
 
     companion object {
         //immediately visible to other threads
