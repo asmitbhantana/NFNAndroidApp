@@ -1,12 +1,13 @@
 package org.ak.nfn.data.repository
 
 import org.ak.nfn.data.db.AppDatabase
+import org.ak.nfn.data.db.entities.User
 import org.ak.nfn.data.db.entities.UserToken
 import org.ak.nfn.data.network.MyApi
 import org.ak.nfn.data.network.SafeApiRequest
 import org.ak.nfn.data.network.responses.AuthResponse
 import org.ak.nfn.data.network.responses.UserSignUpResponse
-import retrofit2.Response
+import org.ak.nfn.data.pojo.UserSignup
 
 val TAG = "HELLO"
 class UserRepository(
@@ -20,24 +21,22 @@ class UserRepository(
         }
     }
 
-    suspend fun userSignUp(email: String,
-                       password: String,
-                       first_name: String,
-                       last_name: String,
-                       gender: Int,
-                       citizenship_number: String,
-                       current_address: String,
-                       permanent_address: String,
-                       username: String)
+    suspend fun userSignUp(userDetail:UserSignup)
             : UserSignUpResponse{
-        return apiRequest { api.userSignUp(email, password, first_name, last_name, gender, citizenship_number, current_address, permanent_address,username)
+        return apiRequest {
+            api.userSignUp(userDetail.email!!, userDetail.first_name!!, userDetail.last_name!!,
+                    userDetail.dob!!, userDetail.gender!!,userDetail.password!!, userDetail.citizenship_number!!,
+                    userDetail.current_address!!, userDetail.permanent_address!!, userDetail.username!!)
         }
     }
 
-    suspend fun saveToken(userToken: UserToken) = appDatabase.getUserDao().upsert(userToken)
+    suspend fun saveToken(userToken: UserToken) = appDatabase.userTokenDao().upsert(userToken)
+
+    suspend fun saveUser(user: User) = appDatabase.userDao().upsert(user)
 
 
 
-    fun getUser() = appDatabase.getUserDao().getUser()
+    fun getUserToken() = appDatabase.userTokenDao().getUserToken()
+    fun getUser() = appDatabase.userDao().getUser()
 
 }

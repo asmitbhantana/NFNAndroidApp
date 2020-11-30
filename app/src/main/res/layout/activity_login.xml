@@ -83,7 +83,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
             <Button
-                android:onClick="@{viewmodel::onLoginButtonClicked}"
+                android:onClick="@{()->viewmodel.onLoginButtonClicked()}"
                 android:id="@+id/register_btn_id"
                 android:layout_width="100dp"
                 android:layout_height="40dp"
@@ -117,7 +117,8 @@
                 android:textAlignment="textStart"
                 app:layout_constraintBottom_toBottomOf="@+id/textView2"
                 app:layout_constraintEnd_toEndOf="@+id/cardView2"
-                app:layout_constraintTop_toTopOf="@+id/textView2" />
+                app:layout_constraintTop_toTopOf="@+id/textView2"
+                android:onClick="takeToSignUp"/>
 
             <ImageView
                 android:id="@+id/imageView2"
