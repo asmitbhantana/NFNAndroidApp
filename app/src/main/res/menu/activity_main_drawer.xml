@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Options:">
+        <menu>
+            <group>
+        <item
+            android:id="@+id/homeFragment"
+            android:icon="@drawable/ic_home"
+            android:title="Home"
+            />
+        <item
+            android:id="@+id/faqFragment"
+            android:icon="@drawable/ic_faq"
+            android:title="FAQ"
+            />
+        <item
+            android:id="@+id/transactionFragment"
+            android:icon="@drawable/ic_transactions"
+            android:title="Transactions"
+            />
+        <item
+            android:id="@+id/adminFragment2"
+            android:icon="@android:drawable/alert_dark_frame"
+            android:title="Admin Dashboard"
+            />
+        <item
+            android:id="@+id/leaderFragment"
+            android:icon="@android:drawable/alert_dark_frame"
+            android:title="Leader Dashboard"
+            />
+    </group>
+        </menu>
+    </item>
+    <item android:title="More Options:">
+        <menu>
+            <group>
+                <item
+                    android:id="@+id/heatsGuidelineFragment"
+                    android:icon="@android:drawable/ic_dialog_info"
+                    android:title="Leader Dashboard"
+                    />
+                <item
+                    android:id="@+id/tellFriendFragment"
+                    android:icon="@android:drawable/ic_lock_idle_low_battery"
+                    android:title="Tell Friend"
+                    />
+                <item
+                    android:id="@+id/shareAppFragment"
+                    android:icon="@android:drawable/ic_menu_share"
+                    android:title="Share App"
+                    />
+                <item
+                    android:id="@+id/termsFragment"
+                    android:icon="@android:drawable/ic_partial_secure"
+                    android:title="Terms and Condition"
+                    />
+                <item
+                    android:id="@+id/logoutFragment"
+                    android:icon="@android:drawable/ic_delete"
+                    android:title="Logout"
+                    />
+            </group>
+        </menu>
+    </item>
+</menu>
