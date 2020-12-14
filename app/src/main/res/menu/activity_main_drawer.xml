@@ -21,13 +21,13 @@
             android:title="Transactions"
             />
         <item
-            android:id="@+id/adminFragment2"
-            android:icon="@android:drawable/alert_dark_frame"
+            android:id="@+id/adminFragment"
+            android:icon="@drawable/ic_admin_dashboard"
             android:title="Admin Dashboard"
             />
         <item
             android:id="@+id/leaderFragment"
-            android:icon="@android:drawable/alert_dark_frame"
+            android:icon="@drawable/ic_leadership"
             android:title="Leader Dashboard"
             />
     </group>
@@ -38,27 +38,27 @@
             <group>
                 <item
                     android:id="@+id/heatsGuidelineFragment"
-                    android:icon="@android:drawable/ic_dialog_info"
-                    android:title="Leader Dashboard"
+                    android:icon="@drawable/ic_heats_guideline"
+                    android:title="Heats Guidelines"
                     />
                 <item
                     android:id="@+id/tellFriendFragment"
-                    android:icon="@android:drawable/ic_lock_idle_low_battery"
+                    android:icon="@drawable/ic_tell_friend"
                     android:title="Tell Friend"
                     />
                 <item
                     android:id="@+id/shareAppFragment"
-                    android:icon="@android:drawable/ic_menu_share"
+                    android:icon="@drawable/ic_share"
                     android:title="Share App"
                     />
                 <item
                     android:id="@+id/termsFragment"
-                    android:icon="@android:drawable/ic_partial_secure"
+                    android:icon="@drawable/ic_terms_condition"
                     android:title="Terms and Condition"
                     />
                 <item
                     android:id="@+id/logoutFragment"
-                    android:icon="@android:drawable/ic_delete"
+                    android:icon="@drawable/ic_logout"
                     android:title="Logout"
                     />
             </group>
