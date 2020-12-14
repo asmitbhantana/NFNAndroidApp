@@ -52,10 +52,18 @@
         <item name="cardCornerRadius">20dp</item>
         <item name="cardElevation">4dp</item>
     </style>
+
+
     <style name="container_card" parent="Widget.MaterialComponents.CardView">
         <item name="cardCornerRadius">20dp</item>
         <item name="cardElevation">4dp</item>
         <item name="cardBackgroundColor">@color/container_card_background</item>
+    </style>
+
+    <style name="simple_card" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">20dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="cardBackgroundColor">@color/textColorWhite</item>
     </style>
 
     <style name="circular_pp_image_card" parent="Widget.MaterialComponents.CardView">
