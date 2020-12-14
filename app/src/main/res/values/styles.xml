@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
@@ -8,10 +8,16 @@
         <!--        <item name="android:windowTranslucentStatus">true</item>-->
     </style>
 
-    <style name="actionbar" parent="Widget.AppCompat.Toolbar">
-        <item name="titleTextStyle">@style/toolbar_heading_styles</item>
-        <item name="android:titleTextStyle">@style/toolbar_heading_styles</item>
+    <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@color/textColorWhite</item>
     </style>
+    <style name="actionbar" parent="Widget.AppCompat.Light.ActionBar">
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="android:textColorSecondary">@color/textColorWhite</item>
+        <item name="android:textColorPrimary">@color/textColorWhite</item>
+    </style>
+
 
     <style name="ProgressBarTheme" parent="Widget.AppCompat.ProgressBar">
         <item name="android:indeterminateTint">@color/colorPrimary</item>

@@ -17,7 +17,8 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@drawable/screen_top_rectangle"
             android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme" />
+            android:theme="@style/actionbar"
+            />
 
     </com.google.android.material.appbar.AppBarLayout>
 
