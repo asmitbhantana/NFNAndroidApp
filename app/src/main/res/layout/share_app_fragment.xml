@@ -1,25 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
             name="viewmodel"
             type="org.ak.nfn.ui.home.shareapp.ShareAppViewModel" />
     </data>
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/homeFragmentLayout"
         tools:context="org.ak.nfn.ui.home.shareapp.ShareAppFragment">
+        <ImageView
+            android:id="@+id/imageView32"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/cardView6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/illu_share_with_friend" />
 
-        <TextView
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView6"
+            style="@style/simple_card"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Hello home" />
+            android:layout_height="200dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
-    </FrameLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView64"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="Share app on Social Media Platform!"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/signin_button_background"
+                    android:text="Share"
+                    android:textAllCaps="false"
+                    android:textColor="@color/textColorWhite"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/textView64"
+                    app:layout_constraintStart_toStartOf="@+id/textView64" />
+
+                <ImageView
+                    android:id="@+id/imageView33"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:padding="4dp"
+                    app:layout_constraintBottom_toTopOf="@+id/button3"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView36"
+                    app:layout_constraintStart_toStartOf="@+id/button3"
+                    app:layout_constraintTop_toBottomOf="@+id/textView64"
+                    app:srcCompat="@drawable/facebook_icon" />
+
+                <ImageView
+                    android:id="@+id/imageView34"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:padding="4dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView35"
+                    app:layout_constraintEnd_toEndOf="@+id/button3"
+                    app:layout_constraintTop_toTopOf="@+id/imageView35"
+                    app:srcCompat="@drawable/ic_whatsapp" />
+
+                <ImageView
+                    android:id="@+id/imageView35"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginEnd="8dp"
+                    android:padding="4dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView36"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView34"
+                    app:layout_constraintTop_toTopOf="@+id/imageView36"
+                    app:srcCompat="@drawable/ic_twitter" />
+
+                <ImageView
+                    android:id="@+id/imageView36"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginEnd="8dp"
+                    android:padding="4dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView33"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView35"
+                    app:layout_constraintTop_toTopOf="@+id/imageView33"
+                    app:srcCompat="@drawable/ic_instagram" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
 

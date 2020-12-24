@@ -1,10 +1,14 @@
 package org.ak.nfn.ui.home
 
+import android.annotation.SuppressLint
 import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
+import android.view.View
+import androidx.appcompat.widget.ThemeUtils
+import androidx.core.view.isVisible
 import androidx.navigation.findNavController
 import androidx.navigation.ui.*
 import kotlinx.android.synthetic.main.activity_home.*
@@ -37,16 +41,50 @@ class HomeActivity : AppCompatActivity() {
 
             val l =  destination.label as String
             when (l){
-                "home_fragment" -> supportActionBar?.title = "Home"
-                "faq_fragment" -> supportActionBar?.title = "FAQ"
-                "transaction_fragment" -> supportActionBar?.title = "Transaction"
-                "admin_fragment" -> supportActionBar?.title = "Admin Panel"
-                "leader_fragment" -> supportActionBar?.title = "Leader Panel"
-                "heats_guideline_fragment" -> supportActionBar?.title = "Heats Guideline"
-                "tell_friend_fragment" -> supportActionBar?.title = "Tell Friend"
-                "share_app_fragment" -> supportActionBar?.title = "Share App"
-                "terms_fragment" -> supportActionBar?.title = "Terms & Conditions"
-                "logout_fragment" -> supportActionBar?.title = "Logout"
+                "home_fragment" ->{
+                    fab.hide()
+                    supportActionBar?.title = "Home"
+                }
+                "faq_fragment" ->{
+                    fab.show()
+                    fab.setImageDrawable(resources.getDrawable(R.drawable.ic_faq))
+                    supportActionBar?.title = "FAQ"
+                }
+                "transaction_fragment" ->{
+                    fab.show()
+                    fab.setImageDrawable(resources.getDrawable(R.drawable.ic_add))
+                    supportActionBar?.title = "Transaction"
+                }
+                "admin_fragment" ->{
+                    fab.hide()
+                    supportActionBar?.title = "Admin Panel"
+                }
+                "leader_fragment" ->{
+                    fab.hide()
+                    supportActionBar?.title = "Leader Panel"
+                }
+                "heats_guideline_fragment" ->{
+                    fab.hide()
+                    supportActionBar?.title = "Heats Guideline"
+                }
+                "tell_friend_fragment" ->{
+                    fab.hide()
+                    supportActionBar?.title = "Tell Friend"
+                }
+                "share_app_fragment" ->{
+                    fab.hide()
+                    supportActionBar?.title = "Share App"
+                }
+                "terms_fragment" ->{
+                    fab.hide()
+                    supportActionBar?.title = "Terms & Conditions"
+
+                }
+                "logout_fragment" ->{
+                    fab.hide()
+                    supportActionBar?.title = "Logout"
+
+                }
                 else -> {
 //                    supportActionBar?.title = "Default"
                 }

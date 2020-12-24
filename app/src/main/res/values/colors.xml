@@ -10,4 +10,11 @@
     <color name="textColorWhite">#FFFFFF</color>
     <color name="container_card_background">#F2E2ED</color>
     <color name="fb_color">#404FBD</color>
+    <color name="colorNavigationSelected">#E68EC5</color>
+    <color name="view_purple_transparent">#33673AB7</color>
+    <color name="esweaColor">#60BB47</color>
+
+    <color name="approveGreen">#04BC16</color>
+    <color name="removeRed">#CC0202</color>
+
 </resources>

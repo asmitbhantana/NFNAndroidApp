@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     tools:openDrawer="start"
     tools:context=".ui.home.HomeActivity"
-    android:id="@+id/drawerLayout"
-    android:background="@color/container_card_background">
+    android:background="@color/container_card_background"
+    android:id="@+id/drawerLayout">
     <include
         layout="@layout/app_bar_main"
         android:layout_width="match_parent"
@@ -19,7 +19,8 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        android:theme="@style/Theme.MyApplication.AppBarOverlay"
+        android:background="@color/container_card_background"
         app:headerLayout="@layout/nav_header_main"
+        style="@style/Widget.Custom.NavigationView"
         app:menu="@menu/activity_main_drawer" />
 </androidx.drawerlayout.widget.DrawerLayout>
