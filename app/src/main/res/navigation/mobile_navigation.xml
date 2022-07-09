@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="org.ak.nfn.ui.home.home.HomeFragment"
+        android:label="home_fragment"
+        tools:layout="@layout/home_fragment" />
+    <fragment
+        android:id="@+id/adminFragment"
+        android:name="org.ak.nfn.ui.home.admindash.AdminFragment"
+        android:label="admin_fragment"
+        tools:layout="@layout/admin_fragment" />
+    <fragment
+        android:id="@+id/faqFragment"
+        android:name="org.ak.nfn.ui.home.faq.FaqFragment"
+        android:label="faq_fragment"
+        tools:layout="@layout/faq_fragment" />
+    <fragment
+        android:id="@+id/heatsGuidelineFragment"
+        android:name="org.ak.nfn.ui.home.heatsguideline.HeatsGuidelineFragment"
+        android:label="heats_guideline_fragment"
+        tools:layout="@layout/heats_guideline_fragment" />
+    <fragment
+        android:id="@+id/leaderFragment"
+        android:name="org.ak.nfn.ui.home.leaderdash.LeaderFragment"
+        android:label="leader_fragment"
+        tools:layout="@layout/leader_fragment" />
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="org.ak.nfn.ui.home.readnews.NewsFragment"
+        android:label="news_fragment"
+        tools:layout="@layout/news_fragment" />
+    <fragment
+        android:id="@+id/logoutFragment"
+        android:name="org.ak.nfn.ui.home.logout.LogoutFragment"
+        android:label="logout_fragment"
+        tools:layout="@layout/logout_fragment" />
+    <fragment
+        android:id="@+id/shareAppFragment"
+        android:name="org.ak.nfn.ui.home.shareapp.ShareAppFragment"
+        android:label="share_app_fragment"
+        tools:layout="@layout/share_app_fragment" />
+    <fragment
+        android:id="@+id/tellFriendFragment"
+        android:name="org.ak.nfn.ui.home.tellfriend.TellFriendFragment"
+        android:label="tell_friend_fragment"
+        tools:layout="@layout/tell_friend_fragment" />
+    <fragment
+        android:id="@+id/termsFragment"
+        android:name="org.ak.nfn.ui.home.terms.TermsFragment"
+        android:label="terms_fragment"
+        tools:layout="@layout/terms_fragment" />
+    <fragment
+        android:id="@+id/transactionFragment"
+        android:name="org.ak.nfn.ui.home.transaction.TransactionFragment"
+        android:label="transaction_fragment"
+        tools:layout="@layout/transaction_fragment" />
+</navigation>

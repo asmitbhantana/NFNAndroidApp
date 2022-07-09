@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/homeFragment"
+            android:icon="@drawable/ic_home"
+            android:title="Home"
+            
+            />
+        <item
+            android:id="@+id/faqFragment"
+            android:icon="@drawable/ic_faq"
+            android:title="FAQ"
+            />
+        <item
+            android:id="@+id/transactionFragment"
+            android:icon="@drawable/ic_transactions"
+            android:title="Transactions"
+            />
+        <item
+            android:id="@+id/adminFragment"
+            android:icon="@drawable/ic_admin_dashboard"
+            android:title="Admin Dashboard"
+            />
+        <item
+            android:id="@+id/leaderFragment"
+            android:icon="@drawable/ic_leadership"
+            android:title="Leader Dashboard"
+            />
+    </group>
+
+    <item android:title="More Options:">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/heatsGuidelineFragment"
+                    android:icon="@drawable/ic_heats_guideline"
+                    android:title="Heats Guidelines"
+                    />
+                <item
+                    android:id="@+id/tellFriendFragment"
+                    android:icon="@drawable/ic_tell_friend"
+                    android:title="Tell Friend"
+                    />
+                <item
+                    android:id="@+id/shareAppFragment"
+                    android:icon="@drawable/ic_share"
+                    android:title="Share App"
+                    />
+                <item
+                    android:id="@+id/termsFragment"
+                    android:icon="@drawable/ic_terms_condition"
+                    android:title="Terms and Condition"
+                    />
+                <item
+                    android:id="@+id/logoutFragment"
+                    android:icon="@drawable/ic_logout"
+                    android:title="Logout"
+                    />
+            </group>
+        </menu>
+    </item>
+</menu>
